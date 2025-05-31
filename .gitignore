@@ -1,0 +1,13 @@
+# Pythonキャッシュ
+__pycache__/
+*.pyc
+
+# 仮想環境（venv）
+venv/
+
+# OSファイル
+.DS_Store
+Thumbs.db
+
+# VSCode設定ファイル（任意）
+.vscode/
