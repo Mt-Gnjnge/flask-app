@@ -11,7 +11,10 @@
     </form>
     <ul>
         {% for task in tasks %}
-            <li>{{ task.content }}</li>
+            <li>
+                {{ task.content }}
+                <a href="/delete/{{ task.id }}" style="color:red;">[削除]</a>
+            </li>
         {% endfor %}
     </ul>
 </body>

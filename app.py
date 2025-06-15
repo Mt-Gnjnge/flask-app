@@ -24,6 +24,15 @@ def index():
     tasks = conn.execute("SELECT * FROM tasks").fetchall()
     conn.close()
     return render_template("index.html", tasks=tasks)
+
+@app.route("/delete/<int:task_id>")
+def delete(task_id):
+    conn = get_db_connection()
+    conn.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
+    conn.commit()
+    conn.close()
+    return redirect("/")
+
     
 if __name__=="__main__":
     app.run(debug=True)
